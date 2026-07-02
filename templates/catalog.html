@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="section__header">
+    <h2>Каталог товаров</h2>
+    <div class="pill">{{ products|length }} товаров</div>
+  </div>
+
+  <!-- Advanced Filters -->
+  <div class="glass-panel" style="padding: 1.5rem; border-radius: 20px; margin-bottom: 2rem;">
+    <form method="get" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+      <div>
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Категория</label>
+        <select name="category" style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px;">
+          <option value="">Все категории</option>
+          {% for cat in categories %}
+          <option value="{{ cat }}" {% if selected_category == cat %}selected{% endif %}>{{ cat }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">От (₽)</label>
+        <input type="number" name="price_min" value="{{ price_min }}" style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px;" />
+      </div>
+      <div>
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">До (₽)</label>
+        <input type="number" name="price_max" value="{{ price_max }}" style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px;" />
+      </div>
+      <div>
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Минимальный рейтинг</label>
+        <select name="rating_min" style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 12px;">
+          <option value="0" {% if rating_min == 0 %}selected{% endif %}>Все товары</option>
+          <option value="3" {% if rating_min == 3 %}selected{% endif %}>★ 3+</option>
+          <option value="4" {% if rating_min == 4 %}selected{% endif %}>★ 4+</option>
+          <option value="4.5" {% if rating_min == 4.5 %}selected{% endif %}>★ 4.5+</option>
+        </select>
+      </div>
+      <div style="display: flex; align-items: flex-end;">
+        <button type="submit" class="button button--primary" style="width: 100%;">Применить фильтры</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="products-grid">
+    {% for product in products %}
+    <article class="product-card glass-panel">
+      {% if product.image %}
+      <div class="product-card__image-wrap">
+        <img class="product-card__image" src="{{ product.image }}" alt="{{ product.name }}" />
+      </div>
+      {% else %}
+      <div class="product-card__image-wrap empty-image">
+        <span>Фото товара</span>
+      </div>
+      {% endif %}
+      <div class="product-card__top">
+        <span class="badge">{{ product.badge }}</span>
+        <span class="rating">★ {{ product.rating }}</span>
+      </div>
+      <h3 class="gradient-text">{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <div class="product-card__meta">
+        <span>{{ product.category }}</span>
+        <span>{{ product.delivery }}</span>
+      </div>
+      <div class="price-row">
+        <div>
+          <strong>{{ product.price }} ₽</strong>
+          {% if product.old_price %}
+          <span class="old-price">{{ product.old_price }} ₽</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="button button--primary" data-add-to-cart data-product='{{ product | tojson | e }}'>Купить сейчас</button>
+        <button class="button button--secondary" type="button" data-add-to-cart data-product='{{ product | tojson | e }}'>Добавить в корзину</button>
+        <button class="button button--secondary favorite-btn" type="button" data-product='{{ product | tojson | e }}'>♡</button>
+      </div>
+    </article>
+
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

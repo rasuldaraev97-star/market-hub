@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="product-detail glass-panel">
+    <div class="product-detail__media">
+      {% if product.photos and product.photos|length > 0 %}
+        <div class="product-gallery">
+          <img id="mainProductImage" src="{{ product.photos[0] }}" alt="{{ product.name }}" class="product-gallery__main" />
+          {% if product.photos|length > 1 %}
+            <div class="product-gallery__thumbnails">
+              {% for photo in product.photos %}
+                <div class="gallery-thumb" onclick="document.getElementById('mainProductImage').src='{{ photo }}'">
+                  <img src="{{ photo }}" alt="Фото {{ loop.index }}" />
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% elif product.image %}
+      <img src="{{ product.image }}" alt="{{ product.name }}" />
+      {% else %}
+      <div class="product-card__image-wrap empty-image">
+        <span>Фото товара</span>
+      </div>
+      {% endif %}
+    </div>
+    <div class="product-detail__info">
+      <span class="badge">{{ product.badge }}</span>
+      <h1 class="gradient-text">{{ product.name }}</h1>
+      <p>{{ product.description }}</p>
+      <div class="product-card__meta">
+        <span>{{ product.category }}</span>
+        <span>{{ product.delivery }}</span>
+      </div>
+      <div class="price-row">
+        <div>
+          <strong>{{ product.price }} ₽</strong>
+          {% if product.old_price %}
+          <span class="old-price">{{ product.old_price }} ₽</span>
+          {% endif %}
+        </div>
+        <button class="button button--primary" data-add-to-cart data-product='{{ product | tojson | e }}'>В корзину</button>
+      </div>
+      <div class="product-detail__meta">
+        <div>⭐ {{ product.rating }}</div>
+        <div>📦 {{ product.stock }}</div>
+      </div>
+      {% if product.videos and product.videos|length > 0 %}
+        <div class="product-videos-section">
+          <h3>Видео товара</h3>
+          <div class="product-videos-grid">
+            {% for video in product.videos %}
+              <video controls width="150" height="150" class="product-video">
+                <source src="{{ video }}" type="video/mp4">
+              </video>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

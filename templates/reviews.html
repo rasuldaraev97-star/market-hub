@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="section__header">
+    <h2>Отзывы и рейтинги</h2>
+    <span class="pill">Оценки товаров и отзывы от покупателей</span>
+  </div>
+
+  <div class="reviews-container">
+    <div class="reviews-filters glass-panel">
+      <h3>Фильтры</h3>
+      <div class="filter-group">
+        <label>Сортировать по</label>
+        <select id="sortReviews">
+          <option value="recent">Новые</option>
+          <option value="helpful">Полезные</option>
+          <option value="rating-high">Высокий рейтинг</option>
+          <option value="rating-low">Низкий рейтинг</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Рейтинг</label>
+        <div class="rating-filter">
+          <label><input type="checkbox" value="5" /> ⭐⭐⭐⭐⭐ (5)</label>
+          <label><input type="checkbox" value="4" /> ⭐⭐⭐⭐ (4)</label>
+          <label><input type="checkbox" value="3" /> ⭐⭐⭐ (3)</label>
+          <label><input type="checkbox" value="2" /> ⭐⭐ (2)</label>
+          <label><input type="checkbox" value="1" /> ⭐ (1)</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-list">
+      <div class="review-item glass-panel">
+        <div class="review-header">
+          <div>
+            <strong>Смарт-часы Quantum Pro</strong>
+            <span class="review-rating">⭐⭐⭐⭐⭐</span>
+          </div>
+          <span class="review-date">5 дн. назад</span>
+        </div>
+        <p class="review-text">Отличные часы! Батарея держит неделю, экран яркий, фитнес-функции работают идеально. Рекомендую всем спортсменам.</p>
+        <div class="review-meta">
+          <button class="review-helpful">👍 Полезно (24)</button>
+          <span class="reviewer">от Иван К.</span>
+        </div>
+      </div>
+
+      <div class="review-item glass-panel">
+        <div class="review-header">
+          <div>
+            <strong>Наушники Nova Wireless</strong>
+            <span class="review-rating">⭐⭐⭐⭐</span>
+          </div>
+          <span class="review-date">1 неделю назад</span>
+        </div>
+        <p class="review-text">Очень хороший звук, удобные вкладыши. Единственный минус — немного ловит помехи в метро. За эту цену хороший выбор.</p>
+        <div class="review-meta">
+          <button class="review-helpful">👍 Полезно (18)</button>
+          <span class="reviewer">от Мария П.</span>
+        </div>
+      </div>
+
+      <div class="review-item glass-panel">
+        <div class="review-header">
+          <div>
+            <strong>Монитор 4K UltraWide</strong>
+            <span class="review-rating">⭐⭐⭐⭐⭐</span>
+          </div>
+          <span class="review-date">2 недели назад</span>
+        </div>
+        <p class="review-text">Невероятный монитор для работы и игр! Цвета отличные, размер позволяет видеть много. Настоятельно рекомендую всем, кто работает с медиа.</p>
+        <div class="review-meta">
+          <button class="review-helpful">👍 Полезно (42)</button>
+          <span class="reviewer">от Алексей Л.</span>
+        </div>
+      </div>
+
+      <div class="review-item glass-panel">
+        <div class="review-header">
+          <div>
+            <strong>Клавиатура Mechanical RGB</strong>
+            <span class="review-rating">⭐⭐⭐</span>
+          </div>
+          <span class="review-date">2 недели назад</span>
+        </div>
+        <p class="review-text">Хорошая механическая клавиатура, но немного громкая. RGB подсветка красивая, переключатели приятные. Подойдет для геймеров.</p>
+        <div class="review-meta">
+          <button class="review-helpful">👍 Полезно (12)</button>
+          <span class="reviewer">от Сергей В.</span>
+        </div>
+      </div>
+
+      <div class="review-item glass-panel">
+        <div class="review-header">
+          <div>
+            <strong>Портативный SSD 2TB</strong>
+            <span class="review-rating">⭐⭐⭐⭐⭐</span>
+          </div>
+          <span class="review-date">3 недели назад</span>
+        </div>
+        <p class="review-text">Суперскоростной диск! Легко переносить большие проекты и видео. Цена справедливая, конструкция надежная. Работаю с ним полгода без проблем.</p>
+        <div class="review-meta">
+          <button class="review-helpful">👍 Полезно (67)</button>
+          <span class="reviewer">от Дмитрий З.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rating-stats glass-panel">
+    <h3>Общая статистика рейтингов</h3>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-label">Среднее</div>
+        <div class="stat-value">4.7</div>
+        <div class="stat-subtext">из 5.0</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Всего отзывов</div>
+        <div class="stat-value">2,847</div>
+        <div class="stat-subtext">+ 142 на этой неделе</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Проверенные покупатели</div>
+        <div class="stat-value">94%</div>
+        <div class="stat-subtext">отзывы с покупкой</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Рекомендуют товар</div>
+        <div class="stat-value">91%</div>
+        <div class="stat-subtext">других покупателей</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

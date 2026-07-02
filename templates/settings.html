@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="section__header">
+    <h2>Настройки</h2>
+    <span class="pill">Аккаунт, кач-выбор и QR-коды</span>
+  </div>
+  <div class="settings-page">
+    <div class="settings-panel">
+      <div class="account-block">
+        <h2>Мой аккаунт</h2>
+        <p id="settingsStatus" class="settings-note"></p>
+        <div class="field-group">
+          <label>Имя пользователя<input type="text" value="Дараев Абдул-Малик" disabled /></label>
+          <label>Почта<input type="text" value="abdulmalik@example.com" disabled /></label>
+          <label>Режим доставки<select><option>Самовывоз</option><option>Курьер</option><option>Постамат</option></select></label>
+        </div>
+      </div>
+
+      <div class="pickup-block">
+        <h2>QR-код для самовывоза</h2>
+        <p class="settings-note">Используйте код в точке выдачи, чтобы быстро забрать заказ без очередей.</p>
+        <div class="qr-card">
+          <div class="qr-grid" id="qrCode"></div>
+          <p style="margin-top:1rem;font-size:0.95rem;color:#475569;">Покажите этот QR-код в пункте выдачи или сохраните скриншот.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-panel">
+      <div class="product-form">
+        <h2>Добавить товар</h2>
+        <p class="settings-note">Добавьте новый товар в каталог прямо сейчас. Ввод сохраняется в текущем сеансе сервера.</p>
+        <form id="newProductForm">
+          <div class="field-group">
+            <label>Название<input name="name" placeholder="Пример: Умные наушники Nova" required /></label>
+            <label>Цена (руб.)<input name="price" type="number" min="0" placeholder="12990" required /></label>
+            <label>Старая цена (руб.)<input name="old_price" type="number" min="0" placeholder="15990" /></label>
+            <label>Категория<input name="category" placeholder="Электроника" required /></label>
+            <label>Описание<textarea name="description" placeholder="Кратко о преимуществах..."></textarea></label>
+            <label>Доставка<input name="delivery" placeholder="Сегодня или завтрашним вечером" /></label>
+            <label>Метка товара<input name="badge" placeholder="Хит, Скидка, Новинка" /></label>
+            <label>Ссылка на изображение<input name="image" placeholder="https://avatars.mds.yandex.net/get-mpic/20190585/2a0000019db5b6a421d40271c5901f950e99/orig" /></label>
+            <label>Загрузить фото товара (несколько)<input id="photoInput" name="photos" type="file" accept="image/*" multiple /></label>
+            <label>Загрузить видео товара (несколько)<input id="videoInput" name="videos" type="file" accept="video/*" multiple /></label>
+            <div class="media-preview" id="mediaPreview"><div class="media-preview-empty">Предпросмотр медиа появится здесь</div></div>
+          </div>
+          <div class="form-footer">
+            <button class="button button--primary" type="submit">Добавить товар</button>
+          </div>
+        </form>
+      </div>
+      <div class="account-block">
+        <h2>Дополнительные функции</h2>
+        <ul style="line-height:1.8;color:#374151;">
+          <li>Управление адресами доставки и точками самовывоза.</li>
+          <li>История заказов и статус доставки.</li>
+          <li>Сохранённые избранные товары и персональные подборки.</li>
+          <li>Промокоды, акции и скидки для постоянных клиентов.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

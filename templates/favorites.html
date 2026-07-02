@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="section__header">
+    <h2>Избранное</h2>
+    <div class="pill" id="favoritesCountLabel">0 товаров</div>
+  </div>
+
+  <div id="favoritesGrid" class="products-grid"></div>
+  <div id="favoritesEmptyState" class="glass-panel" style="padding: 2rem; border-radius: 24px; text-align: center; display: none;">
+    <h3>Пока здесь пусто</h3>
+    <p>Добавьте понравившиеся товары в избранное и они появятся на этой странице.</p>
+    <a class="button button--primary" href="{{ url_for('catalog') }}">Перейти в каталог</a>
+  </div>
+</section>
+{% endblock %}

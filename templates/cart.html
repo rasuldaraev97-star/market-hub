@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="section__header">
+    <h2>Корзина</h2>
+    <div class="pill">Счётчик: <span id="cartItemCount">0</span> товаров</div>
+  </div>
+  <div class="cart-actions">
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Товар</th>
+          <th>Цена</th>
+          <th>Количество</th>
+          <th>Итого</th>
+        </tr>
+      </thead>
+      <tbody id="cartItems"></tbody>
+    </table>
+    <aside class="cart-summary">
+      <h3>Итого в корзине</h3>
+      <p>Содержимое корзины сохраняется в браузере.</p>
+      <p>Количество товаров: <strong id="cartTotalCount">0</strong></p>
+      <strong id="cartTotal">0 ₽</strong>
+      <div class="order-callout">Проверьте детали заказа перед оформлением.</div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

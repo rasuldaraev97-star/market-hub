@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarketHub — маркетплейс нового поколения</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="ambient ambient--one"></div>
+    <div class="ambient ambient--two"></div>
+    <header class="topbar glass-panel">
+      <a class="brand" href="{{ url_for('index') }}">
+        <span class="brand__mark">MH</span>
+        <span>MarketHub</span>
+      </a>
+      <nav class="nav-links">
+        <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">Главная</a>
+        <a href="{{ url_for('catalog') }}" class="{% if request.endpoint == 'catalog' %}active{% endif %}">Каталог</a>
+        <a href="{{ url_for('deals') }}" class="{% if request.endpoint == 'deals' %}active{% endif %}">Акции</a>
+        <a href="{{ url_for('recommendations') }}" class="{% if request.endpoint == 'recommendations' %}active{% endif %}">Рекомендации</a>
+        <a href="{{ url_for('reviews') }}" class="{% if request.endpoint == 'reviews' %}active{% endif %}">Отзывы</a>
+        <a href="{{ url_for('orders') }}" class="{% if request.endpoint == 'orders' %}active{% endif %}">Заказы</a>
+        <a href="{{ url_for('help') }}" class="{% if request.endpoint == 'help' %}active{% endif %}">Справка</a>
+        <a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">О нас</a>
+        <a href="{{ url_for('vendor_portal') }}" class="{% if request.endpoint == 'vendor_portal' %}active{% endif %}">Селлерам</a>
+        <a href="{{ url_for('favorites') }}" class="nav-link--accent {% if request.endpoint == 'favorites' %}active{% endif %}">♥</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-box" action="{{ url_for('catalog') }}" method="get">
+          <input type="search" name="q" placeholder="Искать товары" value="{{ query or '' }}" />
+          <button type="submit">Найти</button>
+        </form>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Сменить тему">🌙</button>
+        <a class="cart-link" href="{{ url_for('cart') }}">
+          <span>🛒</span>
+          <span class="cart-link__count" id="cartCount">0</span>
+        </a>
+      </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer class="footer">
+      <p>MarketHub © 2026 • Удобный онлайн-маркетплейс с быстрым оформлением и доставкой.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

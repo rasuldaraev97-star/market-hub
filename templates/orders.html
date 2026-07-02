@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="section__header">
+    <h2>Мои заказы</h2>
+    <span class="pill">История покупок и статус доставки</span>
+  </div>
+
+  <div class="orders-container">
+    <div class="orders-filters glass-panel">
+      <h3>Фильтр заказов</h3>
+      <div class="filter-group">
+        <label>Статус</label>
+        <select id="filterStatus">
+          <option value="">Все заказы</option>
+          <option value="delivered">Доставлено</option>
+          <option value="processing">В обработке</option>
+          <option value="shipping">В пути</option>
+          <option value="pending">Ожидание</option>
+          <option value="cancelled">Отменено</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Период</label>
+        <select id="filterPeriod">
+          <option value="all">За все время</option>
+          <option value="month">За месяц</option>
+          <option value="quarter">За квартал</option>
+          <option value="year">За год</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="orders-list">
+      <div class="order-card glass-panel">
+        <div class="order-header">
+          <div class="order-info">
+            <strong>Заказ #10492</strong>
+            <span class="order-date">1 июля 2024</span>
+          </div>
+          <span class="order-status status-delivered">✓ Доставлено</span>
+        </div>
+        <div class="order-items">
+          <div class="order-item">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=100&q=80" alt="Наушники"/>
+            <div class="order-item-info">
+              <strong>Наушники Nova Wireless</strong>
+              <span class="order-item-price">3,990 ₽</span>
+            </div>
+          </div>
+          <div class="order-item">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=100&q=80" alt="Кабель"/>
+            <div class="order-item-info">
+              <strong>USB-C кабель 2м</strong>
+              <span class="order-item-price">399 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="order-footer">
+          <div class="order-total">Итого: <strong>4,389 ₽</strong></div>
+          <button class="button button--secondary">Подробнее</button>
+        </div>
+      </div>
+
+      <div class="order-card glass-panel">
+        <div class="order-header">
+          <div class="order-info">
+            <strong>Заказ #10491</strong>
+            <span class="order-date">28 июня 2024</span>
+          </div>
+          <span class="order-status status-shipping">📦 В пути</span>
+        </div>
+        <div class="order-items">
+          <div class="order-item">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=100&q=80" alt="Часы"/>
+            <div class="order-item-info">
+              <strong>Смарт-часы Quantum Pro</strong>
+              <span class="order-item-price">18,990 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="order-timeline">
+          <div class="timeline-item completed">
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <strong>Заказ принят</strong>
+              <span>28.06.2024 14:32</span>
+            </div>
+          </div>
+          <div class="timeline-item completed">
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <strong>Отправлено</strong>
+              <span>29.06.2024 10:15</span>
+            </div>
+          </div>
+          <div class="timeline-item active">
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <strong>В пути</strong>
+              <span>Ожидание доставки</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-text">
+              <strong>Доставлено</strong>
+              <span>Ожидается 1 июля</span>
+            </div>
+          </div>
+        </div>
+        <div class="order-footer">
+          <div class="order-total">Итого: <strong>18,990 ₽</strong></div>
+          <button class="button button--secondary">Отследить доставку</button>
+        </div>
+      </div>
+
+      <div class="order-card glass-panel">
+        <div class="order-header">
+          <div class="order-info">
+            <strong>Заказ #10490</strong>
+            <span class="order-date">25 июня 2024</span>
+          </div>
+          <span class="order-status status-processing">⏳ В обработке</span>
+        </div>
+        <div class="order-items">
+          <div class="order-item">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=100&q=80" alt="Клавиатура"/>
+            <div class="order-item-info">
+              <strong>Клавиатура Mechanical RGB</strong>
+              <span class="order-item-price">7,490 ₽</span>
+            </div>
+          </div>
+          <div class="order-item">
+            <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=100&q=80" alt="Мышка"/>
+            <div class="order-item-info">
+              <strong>Беспроводная мышка Pro</strong>
+              <span class="order-item-price">2,990 ₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="order-footer">
+          <div class="order-total">Итого: <strong>10,480 ₽</strong></div>
+          <button class="button button--secondary">Отменить заказ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

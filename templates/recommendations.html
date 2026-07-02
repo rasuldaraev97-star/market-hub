@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="section__header">
+    <h2>Рекомендации для вас</h2>
+    <span class="pill">Персональные подборки на основе ваших интересов</span>
+  </div>
+
+  <div class="recommendations-container">
+    <div class="recommendation-section">
+      <h3>🔥 Ваши интересы</h3>
+      <div class="interest-tags">
+        <span class="interest-tag">Электроника</span>
+        <span class="interest-tag">Гаджеты</span>
+        <span class="interest-tag">ПК-Компоненты</span>
+        <span class="interest-tag">Аксессуары</span>
+        <span class="interest-tag">Смартфоны</span>
+        <button class="button button--secondary button--small">Изменить интересы</button>
+      </div>
+    </div>
+
+    <div class="recommendation-section">
+      <h3>⭐ Похожие на избранные</h3>
+      <p class="section-subtitle">Товары, которые нравятся людям, полюбившим ваши избранные товары</p>
+      <div class="products-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+        <div class="product-card glass-panel">
+          <div class="product-badge">Похожий</div>
+          <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=300&q=80" alt="Ноутбук"/>
+          <div class="product-info">
+            <h4>Ноутбук ProBook 15</h4>
+            <div class="product-rating">⭐ 4.8 (234)</div>
+            <div class="product-price">
+              <strong>54,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Похожий</div>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80" alt="Наушники"/>
+          <div class="product-info">
+            <h4>Наушники Studio Pro</h4>
+            <div class="product-rating">⭐ 4.6 (156)</div>
+            <div class="product-price">
+              <strong>8,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Популярный</div>
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=300&q=80" alt="Веб-камера"/>
+          <div class="product-info">
+            <h4>Веб-камера 4K Ultra</h4>
+            <div class="product-rating">⭐ 4.9 (89)</div>
+            <div class="product-price">
+              <strong>6,490 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Похожий</div>
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=300&q=80" alt="Клавиатура"/>
+          <div class="product-info">
+            <h4>Клавиатура Wireless</h4>
+            <div class="product-rating">⭐ 4.7 (112)</div>
+            <div class="product-price">
+              <strong>5,490 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommendation-section">
+      <h3>💎 Премиум товары для вас</h3>
+      <p class="section-subtitle">Элитные товары высшего качества, подобранные специально</p>
+      <div class="products-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+        <div class="product-card glass-panel">
+          <div class="product-badge">Premium</div>
+          <img src="https://images.unsplash.com/photo-1593642632509-faf5d3a0ad14?auto=format&fit=crop&w=300&q=80" alt="Монитор"/>
+          <div class="product-info">
+            <h4>Монитор OLED Pro</h4>
+            <div class="product-rating">⭐ 5.0 (45)</div>
+            <div class="product-price">
+              <strong>89,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Premium</div>
+          <img src="https://images.unsplash.com/photo-1595507707802-b91b689b8b49?auto=format&fit=crop&w=300&q=80" alt="Наушники"/>
+          <div class="product-info">
+            <h4>Наушники Elite Max</h4>
+            <div class="product-rating">⭐ 4.9 (67)</div>
+            <div class="product-price">
+              <strong>24,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Premium</div>
+          <img src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=300&q=80" alt="Часы"/>
+          <div class="product-info">
+            <h4>Смарт-часы Ultra Gold</h4>
+            <div class="product-rating">⭐ 5.0 (78)</div>
+            <div class="product-price">
+              <strong>49,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Premium</div>
+          <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=300&q=80" alt="SSD"/>
+          <div class="product-info">
+            <h4>NVMe SSD Pro 4TB</h4>
+            <div class="product-rating">⭐ 4.8 (123)</div>
+            <div class="product-price">
+              <strong>34,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommendation-section">
+      <h3>🆕 Новинки в вашей категории</h3>
+      <p class="section-subtitle">Свежие товары, которые только что появились в каталоге</p>
+      <div class="products-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+        <div class="product-card glass-panel">
+          <div class="product-badge">Новинка</div>
+          <img src="https://images.unsplash.com/photo-1515562141207-5dca3b3b141d?auto=format&fit=crop&w=300&q=80" alt="Зарядка"/>
+          <div class="product-info">
+            <h4>Зарядка AI Smart 100W</h4>
+            <div class="product-rating">⭐ 4.7 (12)</div>
+            <div class="product-price">
+              <strong>3,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Новинка</div>
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300&q=80" alt="Часы"/>
+          <div class="product-info">
+            <h4>Часы Fitness Next</h4>
+            <div class="product-rating">⭐ 4.5 (23)</div>
+            <div class="product-price">
+              <strong>12,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Новинка</div>
+          <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=300&q=80" alt="Мышка"/>
+          <div class="product-info">
+            <h4>Мышка Air Ultra</h4>
+            <div class="product-rating">⭐ 4.8 (34)</div>
+            <div class="product-price">
+              <strong>4,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+
+        <div class="product-card glass-panel">
+          <div class="product-badge">Новинка</div>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80" alt="Наушники"/>
+          <div class="product-info">
+            <h4>Наушники Next Gen</h4>
+            <div class="product-rating">⭐ 4.6 (8)</div>
+            <div class="product-price">
+              <strong>7,990 ₽</strong>
+            </div>
+            <button class="button button--primary button--small">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommendation-stats glass-panel">
+      <h3>📊 Ваша активность</h3>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-label">Просмотров товаров</div>
+          <div class="stat-value">847</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">В избранном</div>
+          <div class="stat-value">42</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Покупок</div>
+          <div class="stat-value">23</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">На сумму</div>
+          <div class="stat-value">487,340 ₽</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.section-subtitle {
+  color: #6b7280;
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.95rem;
+}
+
+body.dark .section-subtitle {
+  color: #9ca3af;
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.interest-tag {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+  color: #3b82f6;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+body.dark .interest-tag {
+  background: rgba(59, 130, 246, 0.1);
+  color: #93c5fd;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-method {
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+body.dark .contact-method {
+  background: rgba(255,255,255,0.05);
+}
+
+.product-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+</style>
+{% endblock %}

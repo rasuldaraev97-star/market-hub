@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <div class="hero__copy">
+    <span class="eyebrow">Маркетплейс нового уровня</span>
+    <h1>Откройте всё самое нужное в одном магазине.</h1>
+    <p>Быстрая доставка, честные цены, персональные рекомендации и удобный поиск — всё для вашей покупки за несколько минут.</p>
+    <div class="hero__actions">
+      <a class="button button--primary" href="{{ url_for('catalog') }}">Перейти в каталог</a>
+      <a class="button button--secondary" href="{{ url_for('about') }}">Узнать о нас</a>
+    </div>
+    <div class="stats-row">
+      <div>
+        <strong>100k+</strong>
+        <span>товаров</span>
+      </div>
+      <div>
+        <strong>24/7</strong>
+        <span>поддержка</span>
+      </div>
+      <div>
+        <strong>4.9/5</strong>
+        <span>оценка сервиса</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero__card">
+    <h3>Сегодня в тренде</h3>
+    <ul>
+      <li>Беспроводные наушники</li>
+      <li>Умный дом и техника</li>
+      <li>Подарочные наборы для дома</li>
+    </ul>
+    <div class="offer-pill">Скидки до 40% в подборке</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section__header">
+    <h2>Рекомендуем сегодня</h2>
+    <a href="{{ url_for('catalog') }}">Открыть каталог</a>
+  </div>
+  <div class="products-grid">
+    {% for product in products %}
+    <article class="product-card glass-panel">
+      {% if product.image %}
+      <div class="product-card__image-wrap">
+        <img class="product-card__image" src="{{ product.image }}" alt="{{ product.name }}" />
+      </div>
+      {% else %}
+      <div class="product-card__image-wrap empty-image">
+        <span>Фото товара</span>
+      </div>
+      {% endif %}
+      <div class="product-card__top">
+        <span class="badge">{{ product.badge }}</span>
+        <span class="rating">★ {{ product.rating }}</span>
+      </div>
+      <h3 class="gradient-text">{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <div class="product-card__meta">
+        <span>{{ product.category }}</span>
+        <span>{{ product.delivery }}</span>
+      </div>
+      <div class="price-row">
+        <div>
+          <strong>{{ product.price }} ₽</strong>
+          {% if product.old_price %}
+          <span class="old-price">{{ product.old_price }} ₽</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="button button--primary" data-add-to-cart data-product='{{ product | tojson | e }}'>Купить сейчас</button>
+        <button class="button button--secondary" type="button" data-add-to-cart data-product='{{ product | tojson | e }}'>Добавить в корзину</button>
+        <button class="button button--secondary favorite-btn" type="button">♡</button>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="favorites">
+  <div class="section__header">
+    <h2>Избранные товары</h2>
+    <a href="{{ url_for('favorites') }}">Открыть избранное</a>
+  </div>
+  <div class="favorites-strip glass-panel">
+    <div class="favorite-pill">⚡ Быстрый подбор</div>
+    <div class="favorite-pill">🔥 Топ-акции</div>
+    <div class="favorite-pill">🛍️ Лучшая доставка</div>
+    <div class="favorite-pill">🎯 Персональные рекомендации</div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="section__header">
+    <h2>Почему покупатели выбирают MarketHub</h2>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <h3>Быстрый возврат</h3>
+      <p>26 дней на возврат и удобная проверка товаров в пункте выдачи.</p>
+    </div>
+    <div class="benefit-card">
+      <h3>Персональные скидки</h3>
+      <p>Система бонусов подстраивается под ваши покупки и интересы.</p>
+    </div>
+    <div class="benefit-card">
+      <h3>Надёжная доставка</h3>
+      <p>Сервис отслеживания, страхование и удобный выбор точки выдачи.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

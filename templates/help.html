@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section">
+  <div class="section__header">
+    <h2>Справка и поддержка</h2>
+    <span class="pill">Ответы на частые вопросы и служба поддержки</span>
+  </div>
+
+  <div class="help-container">
+    <div class="help-search glass-panel">
+      <h3>Быстрый поиск</h3>
+      <input type="text" id="helpSearch" placeholder="Введите ваш вопрос..." class="help-search-input" />
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-category">
+        <h3>🛒 Покупки и корзина</h3>
+        <div class="faq-items">
+          <details class="faq-item">
+            <summary>Как добавить товар в корзину?</summary>
+            <p>Найдите интересующий вас товар в каталоге, выберите количество и нажмите кнопку "В корзину". Товар сразу добавится в вашу корзину.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как изменить количество товара в корзине?</summary>
+            <p>Откройте страницу корзины, найдите нужный товар и используйте кнопки + и - для изменения количества. Изменения сохраняются автоматически.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Могу ли я вернуть товар обратно?</summary>
+            <p>Да, вы можете вернуть товар в течение 14 дней с момента доставки, если товар не использовался и находится в оригинальной упаковке.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Есть ли скидка для постоянных клиентов?</summary>
+            <p>Да, постоянные покупатели получают дополнительную скидку 5-10% в зависимости от суммы покупок за период.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="faq-category">
+        <h3>📦 Доставка и заказы</h3>
+        <div class="faq-items">
+          <details class="faq-item">
+            <summary>Как отследить мой заказ?</summary>
+            <p>Перейдите в раздел "Мои заказы", найдите нужный заказ и нажмите "Отследить доставку". Вы получите ссылку для отслеживания с курьерской компании.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Какие способы доставки доступны?</summary>
+            <p>Мы предлагаем курьерскую доставку, самовывоз из постаматов и доставку в пункты выдачи. Выбор способа доступен при оформлении заказа.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Сколько времени занимает доставка?</summary>
+            <p>Обычная доставка — 1-2 рабочих дня. Срочная доставка — в тот же день (при заказе до 14:00). Время зависит от вашего региона.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Какова стоимость доставки?</summary>
+            <p>Доставка бесплатна при заказе от 2000 ₽. Для заказов меньше суммы доставка стоит 199 ₽. Срочная доставка — 499 ₽.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="faq-category">
+        <h3>💳 Оплата и безопасность</h3>
+        <div class="faq-items">
+          <details class="faq-item">
+            <summary>Какие способы оплаты принимаются?</summary>
+            <p>Мы принимаем карты Visa, Mastercard, МИР, а также ЯндексКассу, PayPal. Возможна оплата при получении на некоторые регионы.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Безопасна ли оплата на сайте?</summary>
+            <p>Да, все данные карты шифруются по протоколу SSL 256-bit. Мы не сохраняем полные данные карт — только токены для повторных покупок.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Можно ли использовать промокод?</summary>
+            <p>Да, вы можете применить промокод на странице оформления заказа в поле "Промокод". Скидка рассчитается автоматически.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как вернуть деньги?</summary>
+            <p>Возврат денег производится на исходный способ оплаты в течение 5-7 рабочих дней после подтверждения возврата товара.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="faq-category">
+        <h3>👤 Аккаунт и профиль</h3>
+        <div class="faq-items">
+          <details class="faq-item">
+            <summary>Как создать аккаунт?</summary>
+            <p>Нажмите кнопку "Вход" в верхнем меню, затем выберите "Создать аккаунт". Введите email и пароль, подтвердите email.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как восстановить пароль?</summary>
+            <p>На странице входа нажмите "Забыли пароль?", введите ваш email. Мы отправим ссылку для восстановления пароля на вашу почту.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как удалить аккаунт?</summary>
+            <p>Перейдите в настройки аккаунта, найдите раздел "Безопасность", нажмите "Удалить аккаунт". Подтвердите действие по ссылке в письме.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как изменить язык интерфейса?</summary>
+            <p>В настройках аккаунта выберите предпочитаемый язык. Интерфейс изменится сразу после сохранения.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="support-contact glass-panel">
+      <h3>📞 Служба поддержки</h3>
+      <p>Не нашли ответ? Свяжитесь с нами:</p>
+      <div class="contact-methods">
+        <div class="contact-method">
+          <strong>💬 Чат</strong>
+          <p>Доступен ежедневно 8:00-22:00</p>
+          <button class="button button--primary button--small">Открыть чат</button>
+        </div>
+        <div class="contact-method">
+          <strong>📧 Email</strong>
+          <p>support@markethub.ru</p>
+          <p style="font-size: 0.9rem; color: #6b7280;">Ответ в течение 2 часов</p>
+        </div>
+        <div class="contact-method">
+          <strong>☎️ Телефон</strong>
+          <p>+7 (929) 003-35-36</p>
+          <p style="font-size: 0.9rem; color: #6b7280;">Пн-Пт 9:00-18:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-item summary {
+  cursor: pointer;
+  padding: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+body.dark .faq-item summary {
+  background: rgba(255,255,255,0.06);
+}
+
+.faq-item summary:hover {
+  background: linear-gradient(135deg, #f0f1f3 0%, #e8eaed 100%);
+}
+
+body.dark .faq-item summary:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.faq-item[open] summary {
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.faq-item p {
+  padding: 1rem;
+  margin: 0;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #e5e7eb;
+  color: #374151;
+  line-height: 1.6;
+}
+
+body.dark .faq-item p {
+  background: rgba(255,255,255,0.03);
+  border-top-color: rgba(255,255,255,0.1);
+  color: #d1d5db;
+}
+</style>
+{% endblock %}
